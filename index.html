@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Memory - What's New</title>
+    <link rel="stylesheet" href="/src/css/base/styles.css">
+</head>
+<body>
+    <!-- Header superior -->
+    <header class="main-header">
+        <!-- Botón de tema con icono de sol/luna y menú desplegable -->
+        <div class="dropdown">
+            <button class="icon-btn" id="themeDropdownBtn" aria-label="Elegir modo de página">
+                <span id="theme-icon">🌓</span>
+            </button>
+            <div class="dropdown-content" id="themeDropdownContent">
+                <button onclick="changeTheme('day')"><span>🌞</span> Modo Día</button>
+                <button onclick="changeTheme('night')"><span>🌙</span> Modo Noche</button>
+                <hr>
+                <button onclick="setColorMode('protanopia')"><span style="color:#e57373;">🟥</span> Protanopia</button>
+                <button onclick="setColorMode('deuteranopia')"><span style="color:#81c784;">🟩</span> Deuteranopia</button>
+                <button onclick="setColorMode('tritanopia')"><span style="color:#64b5f6;">🟦</span> Tritanopia</button>
+            </div>
+        </div>
+        <img src="/assets/icons/Logo.png" alt="Sakura Logo" class="logo">
+        <select class="lang-select">
+            <option>ES</option>
+            <option>EN</option>
+        </select>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <h2 class="section-title">What's New</h2>
+        <div class="main-thumbnail"></div>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+
+        <!-- Card de juego destacado -->
+        <section class="featured-game-card">
+            <div class="game-thumb">Game Thumbnail</div>
+            <div class="game-info">
+                <h3>Próximo Juego Java (Swing)</h3>
+                <p class="dev">Desarrollado: <span>Javo Saku</span></p>
+                <p class="desc">¡Experiencia clásica y fluida!</p>
+                <button class="discover-btn">Descubre Más</button>
+            </div>
+        </section>
+
+        <!-- Tabs de Reviews y FAQs -->
+        <div class="tabs">
+            <button class="tab active">Reviews</button>
+            <button class="tab">FAQs</button>
+        </div>
+        <div class="tab-content reviews">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>¡Increíble experiencia! Los juegos son muy divertidos y la plataforma es fácil de usar.</p>
+                <span class="user">- Usuario A</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★☆</div>
+                <p>Muy buenos juegos, aunque la interfaz podría mejorar un poco. En general, estoy satisfecho.</p>
+                <span class="user">- Usuario B</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>La mejor plataforma de juegos que he probado. El soporte técnico responde rápidamente.</p>
+                <span class="user">- Usuario C</span>
+            </div>
+        </div>
+        <!-- Aquí iría el contenido de FAQs si se selecciona esa pestaña -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bar"></div>
+    </footer>
+
+    <script src="theme.js"></script>
+    <script>
+    // Dropdown funcionalidad
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('themeDropdownBtn');
+        const content = document.getElementById('themeDropdownContent');
+        btn.onclick = function(e) {
+            e.stopPropagation();
+            content.classList.toggle('show');
+        };
+        document.body.onclick = function() {
+            content.classList.remove('show');
+        };
+    });
+    </script>
+</body>
+</html>

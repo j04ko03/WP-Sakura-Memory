@@ -1,0 +1,468 @@
+/**********************************************
+                RESET Y BASE
+***********************************************/
+/* Reset básico para consistencia entre navegadores */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100vw;
+    min-width: 320px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 10px 2px #e5e7eb;
+    /* Elimina la siguiente línea para quitar la segunda capa del fondo inferior */
+    /* border-bottom: 16px solid var(--accent-color); */
+    overflow-x: hidden;
+}
+
+/**********************************************
+            VARIABLES GLOBALES
+***********************************************/
+:root {
+    /* Colores base (tema diurno por defecto) */
+    --bg-primary: #F8F9FA;
+    --bg-secondary: #E5E7EB;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --accent-color: #FFD1DC;
+    --border-color: #D1D5DB;
+    
+    /* Preloader */
+    --preloader-bg: #FFD1DC;
+    --preloader-split: #F5F5F5;
+    
+    /* Tiempos de animación */
+    --transition-fast: 0.2s;
+    --transition-medium: 0.4s;
+    
+    /* Bordes */
+    --radius-small: 4px;
+    --radius-medium: 12px;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.07);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/**********************************************
+                ELEMENTOS BASE
+***********************************************/
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+h2.section-title {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast) ease;
+}
+
+a:hover {
+    color: var(--text-secondary);
+}
+
+button {
+    cursor: pointer;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--radius-medium);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    transition: all var(--transition-fast) ease;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+button:hover {
+    filter: brightness(0.95);
+}
+
+.theme-selector,
+.accessibility-modes {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    margin: 0.5rem 1rem 0.5rem 0;
+}
+
+.theme-selector {
+    margin-top: 0.5rem;
+}
+
+.accessibility-modes {
+    margin-bottom: 0.5rem;
+}
+
+/**********************************************
+                HEADER
+***********************************************/
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 1rem 0.5rem 1rem;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.main-header .icon-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+    color: var(--text-primary);
+}
+
+.main-header .logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin: 0 0.5rem;
+}
+
+.main-header .lang-select {
+    border-radius: var(--radius-small);
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.5rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+/**********************************************
+                MAIN THUMBNAIL & CAROUSEL
+***********************************************/
+.main-thumbnail {
+    width: 90%;
+    height: 180px;
+    background: #d1d5db;
+    border-radius: var(--radius-medium);
+    margin: 1.5rem auto 0.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0.7rem 0 1.2rem 0;
+}
+
+.carousel-dots .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c4c4c4;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.carousel-dots .dot.active {
+    background: var(--text-secondary);
+}
+
+/**********************************************
+                FEATURED GAME CARD
+***********************************************/
+.featured-game-card {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-sm);
+    margin: 1.2rem auto 1.5rem auto;
+    width: 92%;
+    padding: 1rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+}
+
+.featured-game-card .game-thumb {
+    width: 100%;
+    height: 70px;
+    background: #e5e7eb;
+    border-radius: var(--radius-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-game-card .game-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    color: var(--text-primary);
+}
+
+.featured-game-card .dev {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.featured-game-card .desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.featured-game-card .discover-btn {
+    background: #111827;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-small);
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+    transition: background 0.2s;
+}
+
+.featured-game-card .discover-btn:hover {
+    background: #374151;
+}
+
+/**********************************************
+                TABS & REVIEWS
+***********************************************/
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin: 1.2rem 0 0.5rem 1rem;
+}
+
+.tab {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: none;
+    border-radius: var(--radius-small) var(--radius-small) 0 0;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.tab.active {
+    background: #fff;
+    border-bottom: 2px solid var(--accent-color);
+    color: var(--text-primary);
+}
+
+.tab-content.reviews {
+    width: 92%;
+    margin: 0 auto 2rem auto;
+}
+
+.review-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-sm);
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.7rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.review-card .stars {
+    color: #FFD700;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.review-card .user {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    align-self: flex-end;
+}
+
+/**********************************************
+                FOOTER
+***********************************************/
+footer {
+    width: 100%;
+    margin-top: 2rem;
+    background: transparent;
+}
+
+.footer-bar {
+    width: 100%;
+    height: 18px;
+    background: var(--accent-color);
+    border-radius: 0 0 16px 16px;
+    /* Elimina cualquier borde o sombra extra aquí */
+    border: none;
+    box-shadow: none;
+}
+
+/**********************************************
+                TEMAS
+***********************************************/
+/* Tema Nocturno */
+[data-theme="night"] {
+    --bg-primary: #000000;
+    --bg-secondary: #333333;
+    --text-primary: #F3F4F6;
+    --text-secondary: #D1D5DB;
+    --accent-color: #FF69B4;
+    --border-color: #4B5563;
+    
+    --preloader-bg: #333333;
+    --preloader-split: #FFD1DC;
+}
+
+/* Modos Daltonismo - Ejemplo Protanopia */
+[data-color-mode="protanopia"] {
+    --text-primary: #2D1A1F;
+    --accent-color: #FFB5C5;
+}
+
+[data-theme="night"][data-color-mode="protanopia"] {
+    --text-primary: #FFD1DC;
+    --accent-color: #33000F;
+}
+
+/**********************************************
+                MEDIA QUERIES
+***********************************************/
+/* Mobile First - Estilos base ya son para móvil */
+/* Tablet */
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 430px;
+    }
+    .container {
+        width: 85%;
+        padding: 3rem 0;
+    }
+    button {
+        padding: 0.75rem 1.5rem;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    .container {
+        width: 80%;
+        padding: 4rem 0;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/**********************************************
+                UTILIDADES
+***********************************************/
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown .icon-btn {
+    font-size: 1.3rem;
+    background: none;
+    border: none;
+    padding: 0.3rem 0.5rem;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    min-width: 170px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-md);
+    z-index: 10;
+    padding: 0.5rem 0;
+    flex-direction: column;
+}
+.dropdown-content button {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    text-align: left;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+}
+.dropdown-content button:hover {
+    background: var(--bg-secondary);
+}
+.dropdown-content hr {
+    margin: 0.3rem 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+}
+.dropdown-content.show {
+    display: flex;
+}
