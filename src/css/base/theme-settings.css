@@ -1,0 +1,106 @@
+/**********************************************
+                TEMAS
+**********************************************/
+[data-theme="day"] {
+    --bg-primary: #F8F9FA;
+    --bg-secondary: #E5E7EB;
+    --text-primary: #111827;
+    --text-secondary: #4B5563;
+    --accent-color: #FFD1DC;
+    --border-color: #D1D5DB;
+    --preloader-bg: #FFD1DC;
+    --preloader-split: #F5F5F5;
+}
+
+[data-theme="night"] {
+    --bg-primary: #000000;
+    --bg-secondary: #333333;
+    --text-primary: #F3F4F6;
+    --text-secondary: #D1D5DB;
+    --accent-color: #FF69B4;
+    --border-color: #4B5563;
+    --preloader-bg: #333333;
+    --preloader-split: #FFD1DC;
+}
+
+/* Modos Daltonismo */
+[data-color-mode="protanopia"] {
+    --text-primary: #2D1A1F;
+    --accent-color: #FFB5C5;
+}
+
+[data-theme="night"][data-color-mode="protanopia"] {
+    --text-primary: #FFD1DC;
+    --accent-color: #33000F;
+}
+
+[data-color-mode="deuteranopia"] {
+    --text-primary: #1F2A37;
+    --accent-color: #81C784;
+}
+
+[data-theme="night"][data-color-mode="deuteranopia"] {
+    --text-primary: #E0F7FA;
+    --accent-color: #1B5E20;
+}
+
+[data-color-mode="tritanopia"] {
+    --text-primary: #2E1B36;
+    --accent-color: #64B5F6;
+}
+
+[data-theme="night"][data-color-mode="tritanopia"] {
+    --text-primary: #FFF3E0;
+    --accent-color: #0D47A1;
+}
+
+/* Modo Monocromático */
+[data-color-mode="monochromatic"] {
+    --bg-primary: #E0E0E0; /* Fondo gris claro */
+    --bg-secondary: #B0B0B0; /* Fondo gris medio */
+    --text-primary: #000000; /* Texto negro */
+    --text-secondary: #4F4F4F; /* Texto gris oscuro */
+    --accent-color: #A0A0A0; /* Gris neutro */
+}
+
+[data-theme="night"][data-color-mode="monochromatic"] {
+    --bg-primary: #1A1A1A; /* Fondo gris oscuro */
+    --bg-secondary: #333333; /* Fondo gris más oscuro */
+    --text-primary: #FFFFFF; /* Texto blanco */
+    --text-secondary: #B0B0B0; /* Texto gris claro */
+    --accent-color: #808080; /* Gris neutro */
+}
+
+/* Modo Protanopia */
+[data-color-mode="protanopia"] {
+    --bg-primary: #F8E6E6; /* Fondo rosado claro */
+    --bg-secondary: #F4D1D1; /* Fondo rosado medio */
+    --text-primary: #2D1A1F; /* Texto marrón oscuro */
+    --text-secondary: #5A3A3F; /* Texto marrón medio */
+    --accent-color: #FFB5C5; /* Rosado desaturado */
+}
+
+[data-theme="night"][data-color-mode="protanopia"] {
+    --bg-primary: #2A1A1A; /* Fondo marrón oscuro */
+    --bg-secondary: #4A2A2A; /* Fondo marrón más oscuro */
+    --text-primary: #FFD1DC; /* Texto rosado claro */
+    --text-secondary: #B08080; /* Texto marrón claro */
+    --accent-color: #33000F; /* Rojo oscuro */
+}
+
+/* Modo Deuteranopia */
+[data-color-mode="deuteranopia"] {
+    --bg-primary: #F8E6E6; /* Fondo rosado claro */
+    --bg-secondary: #F4D1D1; /* Fondo rosado medio */
+    --text-primary: #1F2A37; /* Texto gris azulado oscuro */
+    --text-secondary: #4A5A67; /* Texto gris azulado medio */
+    --accent-color: #C4A7A7; /* Rosado grisáceo */
+}
+
+[data-theme="night"][data-color-mode="deuteranopia"] {
+    --bg-primary: #1A1A1A; /* Fondo gris oscuro */
+    --bg-secondary: #333333; /* Fondo gris más oscuro */
+    --text-primary: #E0F7FA; /* Texto azul claro */
+    --text-secondary: #A0C4C4; /* Texto azul grisáceo */
+    --accent-color: #1B5E20; /* Verde oscuro */
+}

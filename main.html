@@ -6,6 +6,7 @@
     <title>Sakura Memory</title>
     <link rel="stylesheet" href="/src/css/base/preloader.css">
     <link rel="stylesheet" href="/src/css/base/styles.css">
+    <link rel="stylesheet" href="/src/css/base/theme-settings.css">
 </head>
 <body>
     <!-- Preloader -->
@@ -25,9 +26,15 @@
                 <button onclick="changeTheme('day')"><span>🌞</span> Modo Día</button>
                 <button onclick="changeTheme('night')"><span>🌙</span> Modo Noche</button>
                 <hr>
-                <button onclick="setColorMode('protanopia')"><span style="color:#e57373;">🟥</span> Protanopia</button>
-                <button onclick="setColorMode('deuteranopia')"><span style="color:#81c784;">🟩</span> Deuteranopia</button>
-                <button onclick="setColorMode('tritanopia')"><span style="color:#64b5f6;">🟦</span> Tritanopia</button>
+                <button onclick="setColorMode('monochromatic')" data-color-mode="monochromatic">
+                    <span style="color:#A0A0A0;">⚪</span> Monocromático
+                </button>
+                <button onclick="setColorMode('protanopia')" data-color-mode="protanopia">
+                    <span style="color:#FFB5C5;">🟥</span> Protanopia
+                </button>
+                <button onclick="setColorMode('deuteranopia')" data-color-mode="deuteranopia">
+                    <span style="color:#C4A7A7;">🟩</span> Deuteranopia
+                </button>
             </div>
         </div>
             <img src="assets/icons/Logo.png" alt="Sakura Logo" class="logo">

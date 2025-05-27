@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeManager = new ThemeManager();
     
     // Exponer funciones globales para los botones
-    window.changeTheme = (theme) => themeManager.changeTheme(theme);
-    window.setColorMode = (mode) => themeManager.setColorMode(mode);
+    window.changeTheme = (theme) => {
+        themeManager.changeTheme(theme);
+        themeManager.updatePageColors(); // Actualizar colores dinámicamente
+    };
+
+    window.setColorMode = (mode) => {
+        themeManager.setColorMode(mode);
+        themeManager.updatePageColors(); // Actualizar colores dinámicamente
+    };
 });
 
 // Dropdown funcionalidad
