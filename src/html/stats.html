@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - Sakura Memory</title>
+    <link rel="stylesheet" href="/src/css/base/styles.css">
+    <link rel="stylesheet" href="/src/css/base/theme-settings.css">
+    <link rel="stylesheet" href="/src/css/base/stats.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="dropdown">
+            <button class="icon-btn" id="themeDropdownBtn" aria-label="Elegir modo de página">
+                <span id="theme-icon">🌓</span>
+            </button>
+            <div class="dropdown-content" id="themeDropdownContent">
+                <button onclick="changeTheme('day')"><span>🌞</span> Modo Día</button>
+                <button onclick="changeTheme('night')"><span>🌙</span> Modo Noche</button>
+                <hr>
+                <button onclick="setColorMode('monochromatic')" data-color-mode="monochromatic">
+                    <span style="color:#A0A0A0;">⚪</span> Monocromático
+                </button>
+                <button onclick="setColorMode('protanopia')" data-color-mode="protanopia">
+                    <span style="color:#FFB5C5;">🟥</span> Protanopia
+                </button>
+                <button onclick="setColorMode('deuteranopia')" data-color-mode="deuteranopia">
+                    <span style="color:#C4A7A7;">🟩</span> Deuteranopia
+                </button>
+            </div>
+        </div>
+        <!-- Logo del header -->
+        <img src="/assets/icons/Logo.png" alt="Sakura Logo" class="logo">
+        <div class="header-actions">
+            <select class="lang-select">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+            <button class="home-btn" onclick="location.href='/main.html'">🏠</button>
+        </div>
+    </header>
+
+    <!-- Contenido -->
+    <main>
+        <h2 class="section-title">Estadísticas del Juego</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>📥 Instalaciones</h3>
+                <div class="circle-chart" data-value="12345" data-max="15000">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg"
+                              d="M18 2.0845
+                                 a 15.9155 15.9155 0 0 1 0 31.831
+                                 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle"
+                              stroke-dasharray="0, 100"
+                              d="M18 2.0845
+                                 a 15.9155 15.9155 0 0 1 0 31.831
+                                 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <p>12,345</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <h3>🌐 Juegos Online</h3>
+                <div class="circle-chart" data-value="8910" data-max="15000">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg"
+                              d="M18 2.0845
+                                 a 15.9155 15.9155 0 0 1 0 31.831
+                                 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle"
+                              stroke-dasharray="0, 100"
+                              d="M18 2.0845
+                                 a 15.9155 15.9155 0 0 1 0 31.831
+                                 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                    <p>8,910</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bar"></div>
+    </footer>
+
+    <script src="/src/js/stats.js" type="module"></script>
+    <script src="/src/js/main.js" type="module"></script>
+</body>
+</html>

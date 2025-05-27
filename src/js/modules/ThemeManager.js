@@ -15,12 +15,21 @@ export class ThemeManager {
     changeTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
+
+        // Restablecer el modo de color al valor predeterminado
+        if (theme === 'day' || theme === 'night') {
+            document.documentElement.setAttribute('data-color-mode', 'default');
+            localStorage.setItem('colorMode', 'default');
+        }
+
         this.updateThemeIcon(theme);
+        this.updatePageColors(); // Asegúrate de actualizar los colores dinámicamente
     }
 
     setColorMode(mode) {
         document.documentElement.setAttribute('data-color-mode', mode);
         localStorage.setItem('colorMode', mode);
+        this.updatePageColors();
     }
 
     updateThemeIcon(theme) {
@@ -33,18 +42,25 @@ export class ThemeManager {
         const theme = document.documentElement.getAttribute('data-theme');
         const colorMode = document.documentElement.getAttribute('data-color-mode');
 
-        // Cambiar colores de elementos específicos si es necesario
         const header = document.querySelector('.main-header');
         const footer = document.querySelector('footer');
 
+        // Cambiar colores según el tema y el modo de color
         if (theme === 'night') {
             header.style.backgroundColor = '#333333';
             footer.style.backgroundColor = '#111111';
-        } else {
+        } else if (theme === 'day') {
             header.style.backgroundColor = '';
             footer.style.backgroundColor = '';
         }
 
-        // Puedes agregar más lógica aquí para personalizar otros elementos
+        // Opcional: Cambiar colores adicionales según el modo de color
+        if (colorMode === 'protanopia') {
+            document.body.style.filter = 'protanopia-filter'; // Ejemplo
+        } else if (colorMode === 'deuteranopia') {
+            document.body.style.filter = 'deuteranopia-filter'; // Ejemplo
+        } else {
+            document.body.style.filter = ''; // Restablecer
+        }
     }
 }

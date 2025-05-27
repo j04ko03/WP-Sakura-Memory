@@ -18,30 +18,33 @@
     <div class="main-content hidden"> <!-- Esta clase será eliminada por JavaScript -->
         <!-- Header -->
         <header class="main-header">
-        <div class="dropdown">
-            <button class="icon-btn" id="themeDropdownBtn" aria-label="Elegir modo de página">
-                <span id="theme-icon">🌓</span>
-            </button>
-            <div class="dropdown-content" id="themeDropdownContent">
-                <button onclick="changeTheme('day')"><span>🌞</span> Modo Día</button>
-                <button onclick="changeTheme('night')"><span>🌙</span> Modo Noche</button>
-                <hr>
-                <button onclick="setColorMode('monochromatic')" data-color-mode="monochromatic">
-                    <span style="color:#A0A0A0;">⚪</span> Monocromático
+            <div class="dropdown">
+                <button class="icon-btn" id="themeDropdownBtn" aria-label="Elegir modo de página">
+                    <span id="theme-icon">🌓</span>
                 </button>
-                <button onclick="setColorMode('protanopia')" data-color-mode="protanopia">
-                    <span style="color:#FFB5C5;">🟥</span> Protanopia
-                </button>
-                <button onclick="setColorMode('deuteranopia')" data-color-mode="deuteranopia">
-                    <span style="color:#C4A7A7;">🟩</span> Deuteranopia
-                </button>
+                <div class="dropdown-content" id="themeDropdownContent">
+                    <button onclick="changeTheme('day')"><span>🌞</span> Modo Día</button>
+                    <button onclick="changeTheme('night')"><span>🌙</span> Modo Noche</button>
+                    <hr>
+                    <button onclick="setColorMode('monochromatic')" data-color-mode="monochromatic">
+                        <span style="color:#A0A0A0;">⚪</span> Monocromático
+                    </button>
+                    <button onclick="setColorMode('protanopia')" data-color-mode="protanopia">
+                        <span style="color:#FFB5C5;">🟥</span> Protanopia
+                    </button>
+                    <button onclick="setColorMode('deuteranopia')" data-color-mode="deuteranopia">
+                        <span style="color:#C4A7A7;">🟩</span> Deuteranopia
+                    </button>
+                </div>
             </div>
-        </div>
             <img src="assets/icons/Logo.png" alt="Sakura Logo" class="logo">
-            <select class="lang-select">
-                <option>ES</option>
-                <option>EN</option>
-            </select>
+            <div class="header-actions">
+                <select class="lang-select">
+                    <option>ES</option>
+                    <option>EN</option>
+                </select>
+                <button class="stats-btn" onclick="location.href='src/html/stats.html'">📊</button>
+            </div>
         </header>
 
         <!-- Contenido -->

@@ -163,6 +163,28 @@ button:hover {
     margin-right: 0.5rem;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats-btn {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-small);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.stats-btn:hover {
+    background: #ff85a2;
+}
+
 /**********************************************
         MAIN THUMBNAIL & CAROUSEL
 ***********************************************/
@@ -436,6 +458,22 @@ footer {
 }
 .dropdown-content.show {
     display: flex;
+}
+
+.home-btn {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-small);
+    padding: 0.3rem 0.6rem; /* Tamaño reducido */
+    font-size: 0.9rem; /* Fuente más pequeña */
+    box-shadow: none; /* Elimina el sombreado */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.home-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
 }
 
 /**********************************************
