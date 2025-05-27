@@ -27,8 +27,6 @@ body {
     margin: 0 auto;
     border-radius: 20px 20px 0 0;
     box-shadow: 0 0 10px 2px #e5e7eb;
-    /* Elimina la siguiente línea para quitar la segunda capa del fondo inferior */
-    /* border-bottom: 16px solid var(--accent-color); */
     overflow-x: hidden;
 }
 
@@ -166,7 +164,7 @@ button:hover {
 }
 
 /**********************************************
-                MAIN THUMBNAIL & CAROUSEL
+        MAIN THUMBNAIL & CAROUSEL
 ***********************************************/
 .main-thumbnail {
     width: 90%;
@@ -202,7 +200,7 @@ button:hover {
 }
 
 /**********************************************
-                FEATURED GAME CARD
+        FEATURED GAME CARD
 ***********************************************/
 .featured-game-card {
     background: var(--bg-primary);
@@ -267,7 +265,7 @@ button:hover {
 }
 
 /**********************************************
-                TABS & REVIEWS
+            TABS & REVIEWS
 ***********************************************/
 .tabs {
     display: flex;
@@ -324,7 +322,7 @@ button:hover {
 }
 
 /**********************************************
-                FOOTER
+             FOOTER
 ***********************************************/
 footer {
     width: 100%;
@@ -345,7 +343,6 @@ footer {
 /**********************************************
                 TEMAS
 ***********************************************/
-/* Tema Nocturno */
 [data-theme="night"] {
     --bg-primary: #000000;
     --bg-secondary: #333333;
@@ -353,12 +350,11 @@ footer {
     --text-secondary: #D1D5DB;
     --accent-color: #FF69B4;
     --border-color: #4B5563;
-    
     --preloader-bg: #333333;
     --preloader-split: #FFD1DC;
 }
 
-/* Modos Daltonismo - Ejemplo Protanopia */
+/* Modos Daltonismo */
 [data-color-mode="protanopia"] {
     --text-primary: #2D1A1F;
     --accent-color: #FFB5C5;
@@ -367,6 +363,26 @@ footer {
 [data-theme="night"][data-color-mode="protanopia"] {
     --text-primary: #FFD1DC;
     --accent-color: #33000F;
+}
+
+[data-color-mode="deuteranopia"] {
+    --text-primary: #1F2A37;
+    --accent-color: #81C784;
+}
+
+[data-theme="night"][data-color-mode="deuteranopia"] {
+    --text-primary: #E0F7FA;
+    --accent-color: #1B5E20;
+}
+
+[data-color-mode="tritanopia"] {
+    --text-primary: #2E1B36;
+    --accent-color: #64B5F6;
+}
+
+[data-theme="night"][data-color-mode="tritanopia"] {
+    --text-primary: #FFF3E0;
+    --accent-color: #0D47A1;
 }
 
 /**********************************************
@@ -465,4 +481,77 @@ footer {
 }
 .dropdown-content.show {
     display: flex;
+}
+
+/**********************************************
+                PRELOADER FINAL
+***********************************************/
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFD1DC;
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-content {
+    display: block; /* Asegúrate de que sea visible */
+    opacity: 0; /* Oculto inicialmente */
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.main-content.show {
+    opacity: 1; /* Se hace visible */
+}
+
+.horizontal-split {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #F5F5F5;
+    clip-path: inset(50% 0 50% 0);
+    animation: horizontalSplit 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 200px; /* Tamaño aumentado */
+    animation: logoAppear 0.8s ease-out 0.8s forwards;
+    z-index: 2;
+}
+
+@keyframes horizontalSplit {
+    0% { clip-path: inset(50% 0 50% 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes logoAppear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2); /* Escala aumentada */
+    }
+}
+
+@keyframes contentFadeIn {
+    to {
+        opacity: 1;
+    }
 }

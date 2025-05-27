@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sakura Memory - What's New</title>
+    <title>Sakura Memory</title>
+    <link rel="stylesheet" href="/src/css/base/preloader.css">
     <link rel="stylesheet" href="/src/css/base/styles.css">
 </head>
 <body>
-    <!-- Header superior -->
-    <header class="main-header">
-        <!-- Botón de tema con icono de sol/luna y menú desplegable -->
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="horizontal-split"></div>
+        <img src="assets/icons/Logo.png" class="logo" alt="Logo Sakura">
+    </div>
+
+    <div class="main-content hidden"> <!-- Esta clase será eliminada por JavaScript -->
+        <!-- Header -->
+        <header class="main-header">
         <div class="dropdown">
             <button class="icon-btn" id="themeDropdownBtn" aria-label="Elegir modo de página">
                 <span id="theme-icon">🌓</span>
@@ -23,17 +30,17 @@
                 <button onclick="setColorMode('tritanopia')"><span style="color:#64b5f6;">🟦</span> Tritanopia</button>
             </div>
         </div>
-        <img src="/assets/icons/Logo.png" alt="Sakura Logo" class="logo">
-        <select class="lang-select">
-            <option>ES</option>
-            <option>EN</option>
-        </select>
-    </header>
+            <img src="assets/icons/Logo.png" alt="Sakura Logo" class="logo">
+            <select class="lang-select">
+                <option>ES</option>
+                <option>EN</option>
+            </select>
+        </header>
 
-    <!-- Contenido principal -->
-    <main>
-        <h2 class="section-title">What's New</h2>
-        <div class="main-thumbnail"></div>
+        <!-- Contenido -->
+        <main>
+            <h2 class="section-title">What's New</h2>
+            <div class="main-thumbnail"></div>
         <div class="carousel-dots">
             <span class="dot active"></span>
             <span class="dot"></span>
@@ -75,27 +82,14 @@
             </div>
         </div>
         <!-- Aquí iría el contenido de FAQs si se selecciona esa pestaña -->
-    </main>
+        </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-bar"></div>
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <div class="footer-bar"></div>
+        </footer>
+    </div>
 
-    <script src="theme.js"></script>
-    <script>
-    // Dropdown funcionalidad
-    document.addEventListener('DOMContentLoaded', function() {
-        const btn = document.getElementById('themeDropdownBtn');
-        const content = document.getElementById('themeDropdownContent');
-        btn.onclick = function(e) {
-            e.stopPropagation();
-            content.classList.toggle('show');
-        };
-        document.body.onclick = function() {
-            content.classList.remove('show');
-        };
-    });
-    </script>
+    <script src="/src/js/main.js" type="module"></script>
 </body>
 </html>

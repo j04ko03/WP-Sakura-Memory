@@ -1,0 +1,70 @@
+/**********************************************
+                PRELOADER
+**********************************************/
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #FFD1DC;
+    z-index: 1000;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transición suave al ocultar */
+}
+
+.preloader.hidden {
+    opacity: 0;
+    pointer-events: none; /* Evitar interacción cuando está oculto */
+}
+
+.preloader.hidden .logo {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.main-content {
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s; /* Retardo para sincronizar con el preloader */
+}
+
+.main-content.show {
+    opacity: 1;
+}
+
+.horizontal-split {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #F5F5F5;
+    clip-path: inset(50% 0 50% 0);
+    animation: horizontalSplit 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 200px; /* Tamaño del logo */
+    animation: logoAppear 1s ease-out 0.8s forwards; /* Duración ajustada */
+    z-index: 2;
+}
+
+@keyframes horizontalSplit {
+    0% { clip-path: inset(50% 0 50% 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes logoAppear {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* Escala normal */
+    }
+}
