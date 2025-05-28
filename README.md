@@ -61,31 +61,6 @@ Landing page de un juego con enfoque en accesibilidad y personalización. Ofrece
   - Optimización de repaints/reflows
   - Uso eficiente de requestAnimationFrame
 
-## 🖥 Estructura del Proyecto
-WP-SAKURA-MEMORY
-├── assets
-│ └── icons
-│ ├── Frame.png
-│ └── Logo.png
-├── src
-│ ├── css
-│ │ └── base
-│ │ ├── preloader.css
-│ │ ├── stats.css
-│ │ ├── styles.css
-│ │ └── theme-settings.css
-│ ├── html
-│ │ ├── stats.html
-│ │ └── template.html
-│ └── js
-│ ├── modules
-│ │ ├── Preloader.js
-│ │ ├── ThemeManager.js
-│ │ └── stats.js
-│ ├── main.js
-└── main.html
-
-
 ## ⚙ Instalación
 1. Clonar repositorio
 2. Servir via Live Server (VSCode Extension)
