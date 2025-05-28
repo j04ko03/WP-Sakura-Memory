@@ -1,4 +1,4 @@
-# WP-SAKURA-MEMORY 🌸
+# Web Page - SAKURA-MEMORY 🌸
 
 Plataforma de juegos retro con enfoque en accesibilidad y personalización. Ofrece estadísticas en tiempo real, temas visuales adaptables y una experiencia de usuario fluida.
 
