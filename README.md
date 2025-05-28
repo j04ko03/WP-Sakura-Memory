@@ -2,7 +2,7 @@
 
 Plataforma de juegos retro con enfoque en accesibilidad y personalización. Ofrece estadísticas en tiempo real, temas visuales adaptables y una experiencia de usuario fluida.
 
-![Banner](assets/icons/Frame.png)
+![Banner](assets/Logo.png)
 
 ## 🛠 Tecnologías Utilizadas
 - **Frontend**: 
