@@ -1,6 +1,6 @@
 # Web Page - Sakura Memory 🌸
 
-Plataforma de juegos retro con enfoque en accesibilidad y personalización. Ofrece estadísticas en tiempo real, temas visuales adaptables y una experiencia de usuario fluida.
+Landing page de un juego con enfoque en accesibilidad y personalización. Ofrece estadísticas de datos, temas visuales adaptables y una experiencia de usuario fluida.
 
 ![Banner](assets/icons/Logo.png)
 
