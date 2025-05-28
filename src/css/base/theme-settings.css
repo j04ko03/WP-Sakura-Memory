@@ -23,37 +23,6 @@
     --preloader-split: #FFD1DC;
 }
 
-/* Modos Daltonismo */
-[data-color-mode="protanopia"] {
-    --text-primary: #2D1A1F;
-    --accent-color: #FFB5C5;
-}
-
-[data-theme="night"][data-color-mode="protanopia"] {
-    --text-primary: #FFD1DC;
-    --accent-color: #33000F;
-}
-
-[data-color-mode="deuteranopia"] {
-    --text-primary: #1F2A37;
-    --accent-color: #81C784;
-}
-
-[data-theme="night"][data-color-mode="deuteranopia"] {
-    --text-primary: #E0F7FA;
-    --accent-color: #1B5E20;
-}
-
-[data-color-mode="tritanopia"] {
-    --text-primary: #2E1B36;
-    --accent-color: #64B5F6;
-}
-
-[data-theme="night"][data-color-mode="tritanopia"] {
-    --text-primary: #FFF3E0;
-    --accent-color: #0D47A1;
-}
-
 /* Modo Monocromático */
 [data-color-mode="monochromatic"] {
     --bg-primary: #E0E0E0; /* Fondo gris claro */
