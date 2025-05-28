@@ -49,55 +49,81 @@
 
         <!-- Contenido -->
         <main>
-            <h2 class="section-title">What's New</h2>
-            <div class="main-thumbnail"></div>
-        <div class="carousel-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
+            <h2 class="section-title">Novedades</h2>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item placeholder" style="background-color: #d1d5db;"></div>
+                    <div class="carousel-item placeholder" style="background-color: #d1d5db;"></div>
+                    <div class="carousel-item placeholder" style="background-color: #d1d5db;"></div>
+                    <div class="carousel-item placeholder" style="background-color: #d1d5db;"></div>
+                </div>
+                <button class="carousel-btn prev">❮</button>
+                <button class="carousel-btn next">❯</button>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
 
-        <!-- Card de juego destacado -->
-        <section class="featured-game-card">
-            <div class="game-thumb">Game Thumbnail</div>
-            <div class="game-info">
-                <h3>Próximo Juego Java (Swing)</h3>
-                <p class="dev">Desarrollado: <span>Javo Saku</span></p>
-                <p class="desc">¡Experiencia clásica y fluida!</p>
-                <button class="discover-btn">Descubre Más</button>
-            </div>
-        </section>
+            <!-- Card de juego destacado -->
+            <section class="featured-game-card">
+                <div class="game-thumb"></div>
+                <div class="game-info">
+                    <h3>¡Próximo Juego Java interactivo!</h3>
+                    <p class="dev">Desarrollador: <span>J 0 4 K 0</span></p>
+                    <p class="desc">¡Experiencia clásica y fluida!</p>
+                    <button class="discover-btn">
+                        <a href="https://github.com/j04ko03/JAVA-Sakura-Memory" download style="text-decoration: none; color: inherit;">
+                            Descargar aquí
+                        </a>
+                    </button>
+                </div>
+            </section>
 
-        <!-- Tabs de Reviews y FAQs -->
-        <div class="tabs">
-            <button class="tab active">Reviews</button>
-            <button class="tab">FAQs</button>
-        </div>
-        <div class="tab-content reviews">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>¡Increíble experiencia! Los juegos son muy divertidos y la plataforma es fácil de usar.</p>
-                <span class="user">- Usuario A</span>
+            <!-- Tabs de Reviews y FAQs -->
+            <div class="tabs">
+                <button class="tab active" id="reviewsTab">Reviews</button>
+                <button class="tab" id="faqsTab">FAQs</button>
             </div>
-            <div class="review-card">
-                <div class="stars">★★★★☆</div>
-                <p>Muy buenos juegos, aunque la interfaz podría mejorar un poco. En general, estoy satisfecho.</p>
-                <span class="user">- Usuario B</span>
+            <div class="tab-content reviews" id="reviewsContent">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>¡Increíble experiencia! Los juegos son muy divertidos y la plataforma es fácil de usar.</p>
+                    <span class="user">- Usuario A</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>Muy buenos juegos, aunque la interfaz podría mejorar un poco. En general, estoy satisfecho.</p>
+                    <span class="user">- Usuario B</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>La mejor plataforma de juegos que he probado. El soporte técnico responde rápidamente.</p>
+                    <span class="user">- Usuario C</span>
+                </div>
             </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p>La mejor plataforma de juegos que he probado. El soporte técnico responde rápidamente.</p>
-                <span class="user">- Usuario C</span>
+            <div class="tab-content faqs hidden" id="faqsContent">
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo puedo instalar el juego?</h3>
+                    <p class="faq-answer hidden">Puedes instalar el juego desde nuestra página oficial. Solo haz clic en el botón de descarga y sigue las instrucciones.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Es necesario estar conectado a internet para jugar?</h3>
+                    <p class="faq-answer hidden">No, puedes jugar sin conexión. Sin embargo, algunas funciones como ver tu ranking según tu puntuación requieren conexión a internet.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cómo puedo contactar al soporte técnico?</h3>
+                    <p class="faq-answer hidden">Puedes contactarnos enviando un correo a soporte@sakuramemory.com.</p>
+                </div>
             </div>
-        </div>
-        <!-- Aquí iría el contenido de FAQs si se selecciona esa pestaña -->
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-bar"></div>
+            </footer>
         </main>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-bar"></div>
-        </footer>
     </div>
 
     <script src="/src/js/main.js" type="module"></script>

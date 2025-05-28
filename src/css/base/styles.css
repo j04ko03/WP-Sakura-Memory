@@ -200,25 +200,98 @@ button:hover {
     box-shadow: var(--shadow-sm);
 }
 
+/* Estilos del carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-sm);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 180px; /* Altura ajustada para pantallas móviles */
+    background-color: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.carousel-item.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: bold;
+    height: 200px; /* Asegúrate de que coincida con la altura del carrusel */
+    text-align: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-secondary);
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
 .carousel-dots {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.3rem;
-    margin: 0.7rem 0 1.2rem 0;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .carousel-dots .dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background: #c4c4c4;
-    display: inline-block;
-    transition: background 0.2s;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .carousel-dots .dot.active {
-    background: var(--text-secondary);
+    background: var(--accent-color);
+}
+
+/* Media query para pantallas más grandes */
+@media screen and (min-width: 768px) {
+    .carousel-item {
+        height: 250px; /* Aumenta la altura en pantallas más grandes */
+    }
 }
 
 /**********************************************
@@ -343,6 +416,65 @@ button:hover {
     align-self: flex-end;
 }
 
+/* Estilos para las FAQs */
+.faq-item {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem; /* Igual que el padding de review-card */
+    margin: 1rem auto; /* Igual que el margen de review-card */
+    max-width: 90%; /* Asegura que no se desborde del body */
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+    color: var(--accent-color);
+}
+
+.faq-answer {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    display: none;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.faq-answer.hidden {
+    display: none;
+}
+
+.faq-answer:not(.hidden) {
+    display: block;
+}
+
+/* Ocultar contenido por defecto */
+.hidden {
+    display: none;
+}
+
 /**********************************************
              FOOTER
 ***********************************************/
@@ -365,8 +497,7 @@ footer {
 /**********************************************
                 MEDIA QUERIES
 ***********************************************/
-/* Mobile First - Estilos base ya son para móvil */
-/* Tablet */
+/* Mobile */
 @media screen and (min-width: 768px) {
     body {
         max-width: 430px;

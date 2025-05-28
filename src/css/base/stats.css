@@ -1,18 +1,20 @@
 .stats-container {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin: 2rem auto;
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    gap: 2rem; /* Espaciado entre los elementos */
     padding: 1rem;
-    background: var(--bg-secondary);
-    border-radius: var(--radius-medium);
-    box-shadow: var(--shadow-md);
-    width: 90%;
-    align-items: center;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    text-align: center; /* Centra el texto dentro de los elementos */
 }
 
 .stat-item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido dentro de cada stat-item */
+    gap: 1rem; /* Espaciado entre el título y el gráfico */
     color: var(--text-primary);
 }
 
@@ -24,8 +26,8 @@
 
 .circle-chart {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 150px; /* Ajusta el tamaño del gráfico */
+    height: 150px;
 }
 
 .circular-chart {
